@@ -1,5 +1,6 @@
 import './App.css';
 import { Component } from 'react';
+import Bmi from './bmi';
 
 
 export default class App extends Component{
@@ -17,40 +18,30 @@ export default class App extends Component{
  handleScroll = (event) => {
   window.addEventListener('wheel', event = (event) =>  {
     if (event.deltaY < 0){
-      console.log('scrolling up');
-      this.handleClickRed();
+      //scrolling up
+      this.setState({
+        translate: this.state.translate + 745
+      })
     }
     else if (event.deltaY > 0){
-      console.log('scrolling down');
-      let scroll = () => {
+      //scrolling down
         this.setState({
           translate: this.state.translate -745
         })
-      }
-      scroll()
     }
   });
  }
 
+  checkState=() =>{
+    console.log(this.state.translate)
+  }
 
- handleClickRed = () => {
-  this.setState({
-    translate: this.state.translate + 745
-  })
- }
 
- changeColor = () => {
-  this.setState({
-    color:"blue"
-  })
- }
-
- 
+ //this.state.translate == 0 ? onWheel={this.handleScroll} : undefined
 
   render(){
     return (
-      <div onWheel={this.handleScroll} className="App">
-        
+      <div onWheel={this.state.translate >= 744 ? undefined : this.state.translate == -1490 ? undefined : this.state.translate !==0 ? undefined : this.handleScroll } className="App">
           <div className="home-wrap" style={{position: "relative", height: "745px", transition: "all 0.6s ease-in-out 0s", transform: `translate3d(0px,${this.state.translate.toString()+'px'}, 0px)`}}>
             <section className='home-page'>
               <header className="App-header">
@@ -73,14 +64,14 @@ export default class App extends Component{
                   </div>
                 </div>
                 <div className="pizzaBox">
-                  <img className='rotatingWindow'/>
+                  <img className='rotatingWindow'  alt='stop giving me shitty errors'/>
                   <div className='dropdown-content'>
                     <button>Peachza</button>
               
                   </div>
                 </div>
                 <div className='pizzaBox'>
-                  <img className='rotatingWindow'/>
+                  <img className='rotatingWindow'  alt='stop giving me shitty errors'/>
             
                     <div className='dropdown-content'>
                       <button>Pitza</button>
@@ -89,23 +80,35 @@ export default class App extends Component{
               </div>
             </section>
 
-            <section className='home-page'>
-              <div className=''>
-                <p style={{backgroundColor:"red" , height:"100vh", width:"100vw"}}>test</p>
-                <button onClick={() => this.handleClickRed()}>whick</button>
+            <section className='home-page wrapper-page'>
+              <div className='camp-wrap'>
+                <ul className='camp-container'>
+                  <li className='camp-box'>
+                    <img src='https://st4.depositphotos.com/10614052/24611/i/600/depositphotos_246113180-stock-photo-delicious-pizza-grey-background-space.jpg'  alt='stop giving me shitty errors'></img>
+                  </li>
+                  <li className='camp-box'>
+                    <img src='https://st4.depositphotos.com/10614052/24611/i/600/depositphotos_246113252-stock-photo-pizza-tomato-sauce-ingredients-table.jpg'  alt='stop giving me shitty errors'></img>
+                  </li>
+                  <li className='camp-box'>
+                    <img src='https://st4.depositphotos.com/10614052/25045/i/600/depositphotos_250453686-stock-photo-slices-of-delicious-pizza-on.jpg'  alt='stop giving me shitty errors'></img>
+                  </li>
+                </ul>
               </div>  
+              <div className='camp-logo'>
+
+              </div>
+              <div className='role-wrap'>
+
+              </div>
             </section>
 
-            <section className='home-page'>
-              <div>
-                <p style={{backgroundColor:`${this.state.color}` , height:"100vh", width:"100vw", zIndex:"-1", position:"relative"}}>test</p>
-                <button onClick={() => this.handleClickRed()} style={{zIndex:"10" , position:"absolute", top:"0px"}}>sadsadsa</button>
-              </div>
+            <section className='home-page bmi-page'>
+              <Bmi/>
             </section>
 
             <section className='home-page last-page'>
               <div>
-                <p style={{backgroundColor:"white" , height:"100vh", width:"100vw"}}>test</p>
+                <p style={{backgroundColor:"red" , height:"100vh", width:"100vw"}}>test</p>
               </div>
             </section>
 

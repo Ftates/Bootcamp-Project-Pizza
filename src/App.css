@@ -181,3 +181,70 @@ button:hover {
   position: relative;
   overflow: hidden;
 }
+
+.wrapper-page {
+  
+}
+
+.camp-wrap {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 3;
+}
+
+.camp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.camp-box {
+  flex-grow: 0;
+  width: 100vw;
+  height: 33vh;
+  cursor: pointer;
+  position: relative;
+  background: #141516;
+  list-style-type: none;
+}
+
+.wrapper-page .camp-wrap .camp-container .camp-box img {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper-page .camp-wrap .camp-container{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.slideTop-enter-active,
+.slideTop-leave-active {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.slideTop-enter,
+.slideTop-leave-to {
+  -webkit-transform: translateY(-100%) translateZ(0);
+  transform: translateY(-100%) translateZ(0);
+  opacity: 0;
+}
+.slideBottom-enter-active,
+.slideBottom-leave-active {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.slideBottom-enter,
+.slideBottom-leave-to {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 0;
+}
