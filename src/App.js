@@ -1,6 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import Bmi from './bmi';
+import Helpme from './helpme';
 
 
 export default class App extends Component{
@@ -11,7 +12,10 @@ export default class App extends Component{
       scrollDown : false,
       translate: 0,
       color:"green",
+      currentSelection:{},
     }   
+
+
    
   }
 
@@ -34,6 +38,13 @@ export default class App extends Component{
 
   checkState=() =>{
     console.log(this.state.translate)
+  }
+
+
+  passdata = (childData) => {
+    this.setState({
+      currentSelection : childData
+    })
   }
 
 
@@ -103,7 +114,9 @@ export default class App extends Component{
             </section>
 
             <section className='home-page bmi-page'>
-              <Bmi/>
+              <Bmi passdata={this.passdata}/>
+              <Helpme currentSelection = {this.state.currentSelection}/>
+              
             </section>
 
             <section className='home-page last-page'>
