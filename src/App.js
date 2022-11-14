@@ -4,6 +4,7 @@ import Bmi from './bmi';
 import Helpme from './helpme';
 
 
+
 export default class App extends Component{
   constructor(props){
     super(props)
@@ -13,6 +14,7 @@ export default class App extends Component{
       translate: 0,
       color:"green",
       currentSelection:{},
+      shoppingList:[],
     }   
 
 
@@ -41,12 +43,21 @@ export default class App extends Component{
   }
 
 
-  passdata = (childData) => {
+  passdata = (childData) => { //this will now pass the list of obj
     this.setState({
       currentSelection : childData
     })
   }
 
+  handleCalculate = (listtobemapped) => { 
+    
+  }
+  
+  buttonTranslate = (input) => {
+    this.setState({
+      translate : -2235
+    }) 
+  }
 
  //this.state.translate == 0 ? onWheel={this.handleScroll} : undefined
 
@@ -62,30 +73,30 @@ export default class App extends Component{
                 <div className='pizzaBox'>
             
                   <div className='dropdown-content'>
-                    <button>Pigza</button>
+                    <button onClick={()=>{this.setState({translate:-1490})}}>Select Pizzas</button>
               
                   </div>
-                  <button className='rotatingWindow'>Cheesetarian</button>
+                  <img className='rotatingWindow' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3TSfKd7MPWOtis0sLp0Vj5Bp4uLNIEIsKhg&usqp=CAU'/>
                 </div>
                 <div className='pizzaBox'>
-                  <button className='rotatingWindow'>Cheesetarian</button>
+                  <img className='rotatingWindow' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3TSfKd7MPWOtis0sLp0Vj5Bp4uLNIEIsKhg&usqp=CAU'/>
                   <div className='dropdown-content'>
-                    <button>Beachza</button>
+                    <button onClick={()=>{this.setState({translate:-2235})}}>Calory Counter</button>
               
                   </div>
                 </div>
                 <div className="pizzaBox">
-                  <img className='rotatingWindow'  alt='stop giving me shitty errors'/>
+                  <img className='rotatingWindow'  alt='stop giving me shitty errors' src={require('./things/poordog.jpg')}/>
                   <div className='dropdown-content'>
-                    <button>Peachza</button>
+                    <button>I do nothing</button>
               
                   </div>
                 </div>
                 <div className='pizzaBox'>
-                  <img className='rotatingWindow'  alt='stop giving me shitty errors'/>
+                  <img className='rotatingWindow'  alt='stop giving me shitty errors' src='https://i.ytimg.com/vi/E4r5ckveXD8/maxresdefault.jpg'/>
             
                     <div className='dropdown-content'>
-                      <button>Pitza</button>
+                      <button>Im useless</button>
                     </div>
                 </div>     
               </div>
@@ -114,15 +125,13 @@ export default class App extends Component{
             </section>
 
             <section className='home-page bmi-page'>
-              <Bmi passdata={this.passdata}/>
-              <Helpme currentSelection = {this.state.currentSelection}/>
+              <Bmi passdata={this.passdata} handleCalculate={this.handleCalculate} buttonTranslate={this.buttonTranslate}/>
+              
               
             </section>
 
             <section className='home-page last-page'>
-              <div>
-                <p style={{backgroundColor:"red" , height:"100vh", width:"100vw"}}>test</p>
-              </div>
+              <Helpme currentSelection = {this.state.currentSelection}/>
             </section>
 
           </div>

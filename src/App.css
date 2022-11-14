@@ -33,9 +33,6 @@ section {
   width: 100%;
 }
 
-span {
-  border: solid red;
-}
 
 button {
   border: none;
@@ -247,4 +244,12 @@ img {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
   opacity: 0;
+}
+
+.home-page.bmi-page {
+  background-image: url("https://i2-prod.mirror.co.uk/incoming/article6342715.ece/ALTERNATES/s1200/shouting-marmot-main.jpg");
+}
+
+.home-page.last-page {
+  background-color: grey;
 }
