@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Bootcamp-Project-Pizza/static/css/main.1441785b.css",
+    "main.js": "/Bootcamp-Project-Pizza/static/js/main.9811c3bf.js",
+    "static/js/787.142da1d4.chunk.js": "/Bootcamp-Project-Pizza/static/js/787.142da1d4.chunk.js",
+    "index.html": "/Bootcamp-Project-Pizza/index.html",
+    "main.1441785b.css.map": "/Bootcamp-Project-Pizza/static/css/main.1441785b.css.map",
+    "main.9811c3bf.js.map": "/Bootcamp-Project-Pizza/static/js/main.9811c3bf.js.map",
+    "787.142da1d4.chunk.js.map": "/Bootcamp-Project-Pizza/static/js/787.142da1d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1441785b.css",
+    "static/js/main.9811c3bf.js"
+  ]
+}
