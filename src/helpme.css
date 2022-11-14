@@ -1,0 +1,35 @@
+.NutritionSummaryContainer {
+    background-color: antiquewhite;
+    position: relative;
+    display: flex;
+}
+
+.NutritionSummary {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: bisque;
+    box-shadow: 0 0 5px 1px rgb(185, 185, 185);
+}
+
+.NutritionSummaryContainer button{
+    position: absolute;
+    top: 20vh;
+    left: 35vw;
+}
+
+.NutritionSummaryContainer .NutritionSummary li {
+    font-size: 18px;
+    
+}
+
+.PreviewThing {
+    display: flex;
+    justify-content: center;
+    background-color: burlywood;
+    padding-block: 10px;
+}
+
+.PreviewContent {
+    display: flex;
+    justify-content: center;
+}

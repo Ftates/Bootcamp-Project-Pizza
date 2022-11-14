@@ -1,0 +1,36 @@
+.individualPizzaDetailContainer {
+    
+    background-color: bisque;
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+.individualPizzaDetailContainer:hover{
+    cursor: pointer;
+    background-color: rgb(213, 189, 160);
+}
+
+
+
+.individualPizzaDetailContainer .individualPizzaDetailBox {
+    position: absolute;
+    display: none;
+    top:-63.5vh;
+    right: -27vw;
+    background-color: bisque;
+    padding: 3%;
+    flex-wrap: nowrap;
+    box-shadow: 0 0 5px 1px rgb(185, 185, 185);
+}
+
+.individualPizzaDetailBox.show{
+    display: block;
+    
+}
+
+.individualPizzaDetailContainer .individualPizzaDetailBox button {
+    padding-inline: 10px;
+    padding-block: 5px;
+    width: fit-content;
+    border-radius: 5px;
+}
